@@ -515,4 +515,7 @@
     <string name="dashboard_columns_portrait_title">Columns (portrait)</string>
     <string name="dashboard_columns_landscape_title">Columns (landscape)</string>
 
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Show power menu on secure lock screen</string>
+
 </resources>
