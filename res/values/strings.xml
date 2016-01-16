@@ -532,4 +532,8 @@
     <string name="hide_lockscreen_alarm_title">Alarm</string>
     <string name="hide_lockscreen_alarm_summary">Display alarm when set</string>
 
+    <!-- fingerprint authentication vibration -->
+    <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
+    <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
+
 </resources>
