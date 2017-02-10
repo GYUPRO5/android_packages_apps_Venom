@@ -30,6 +30,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.dashboard.DashboardSummary;
 
 import com.viper.venom.preference.CustomSeekBarPreference;
+import com.viper.venom.utils.TelephonyUtils;
 
 import java.util.Date;
 
@@ -39,6 +40,7 @@ public class MiscSettings extends SettingsPreferenceFragment
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
     private static final String DASHBOARD_PORTRAIT_COLUMNS = "dashboard_portrait_columns";
     private static final String DASHBOARD_LANDSCAPE_COLUMNS = "dashboard_landscape_columns";
+    private static final String INCALL_VIB_OPTIONS = "incall_vib_options";
 
     private ListPreference mWiredHeadsetRingtoneFocus;
     private CustomSeekBarPreference mDashboardPortraitColumns;
@@ -69,6 +71,11 @@ public class MiscSettings extends SettingsPreferenceFragment
                 Settings.System.DASHBOARD_LANDSCAPE_COLUMNS, 2);
         mDashboardLandscapeColumns.setValue(columnsLandscape / 1);
         mDashboardLandscapeColumns.setOnPreferenceChangeListener(this);
+
+        PreferenceCategory incallVibCategory = (PreferenceCategory) findPreference(INCALL_VIB_OPTIONS);
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(incallVibCategory);
+        }
     }
 
     @Override
