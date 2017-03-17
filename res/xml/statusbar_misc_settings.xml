@@ -53,4 +53,10 @@
         android:summary="@string/roaming_indicator_icon_summary"
         android:defaultValue="true"/>
 
+    <com.viper.venom.preference.SystemSettingSwitchPreference
+        android:key="dnd_when_call"
+        android:title="@string/dnd_when_call_title"
+        android:summary="@string/dnd_when_call_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
