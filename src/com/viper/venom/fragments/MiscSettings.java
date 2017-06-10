@@ -27,6 +27,9 @@ import android.widget.EditText;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.dashboard.DashboardSummary;
+
+import com.viper.venom.preference.CustomSeekBarPreference;
 
 import java.util.Date;
 
@@ -34,8 +37,12 @@ public class MiscSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
+    private static final String DASHBOARD_PORTRAIT_COLUMNS = "dashboard_portrait_columns";
+    private static final String DASHBOARD_LANDSCAPE_COLUMNS = "dashboard_landscape_columns";
 
     private ListPreference mWiredHeadsetRingtoneFocus;
+    private CustomSeekBarPreference mDashboardPortraitColumns;
+    private CustomSeekBarPreference mDashboardLandscapeColumns;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,6 +57,18 @@ public class MiscSettings extends SettingsPreferenceFragment
         mWiredHeadsetRingtoneFocus.setValue(Integer.toString(mWiredHeadsetRingtoneFocusValue));
         mWiredHeadsetRingtoneFocus.setSummary(mWiredHeadsetRingtoneFocus.getEntry());
         mWiredHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
+
+        mDashboardPortraitColumns = (CustomSeekBarPreference) findPreference(DASHBOARD_PORTRAIT_COLUMNS);
+        int columnsPortrait = Settings.System.getInt(resolver,
+                Settings.System.DASHBOARD_PORTRAIT_COLUMNS, DashboardSummary.mNumColumns);
+        mDashboardPortraitColumns.setValue(columnsPortrait / 1);
+        mDashboardPortraitColumns.setOnPreferenceChangeListener(this);
+
+        mDashboardLandscapeColumns = (CustomSeekBarPreference) findPreference(DASHBOARD_LANDSCAPE_COLUMNS);
+        int columnsLandscape = Settings.System.getInt(resolver,
+                Settings.System.DASHBOARD_LANDSCAPE_COLUMNS, 2);
+        mDashboardLandscapeColumns.setValue(columnsLandscape / 1);
+        mDashboardLandscapeColumns.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -62,6 +81,14 @@ public class MiscSettings extends SettingsPreferenceFragment
                     mWiredHeadsetRingtoneFocus.getEntries()[index]);
             Settings.Global.putInt(resolver, Settings.Global.WIRED_RINGTONE_FOCUS_MODE,
                     mWiredHeadsetRingtoneFocusValue);
+            return true;
+        }else if (preference == mDashboardPortraitColumns) {
+            int columnsPortrait = (Integer) newValue;
+            Settings.System.putInt(resolver, Settings.System.DASHBOARD_PORTRAIT_COLUMNS, columnsPortrait * 1);
+            return true;
+        }else if (preference == mDashboardLandscapeColumns) {
+            int columnsLandscape = (Integer) newValue;
+            Settings.System.putInt(resolver, Settings.System.DASHBOARD_LANDSCAPE_COLUMNS, columnsLandscape * 1);
             return true;
         }
         return false;
