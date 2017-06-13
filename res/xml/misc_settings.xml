@@ -29,7 +29,7 @@
         <com.viper.venom.preference.CustomSeekBarPreference
                 android:key="dashboard_portrait_columns"
                 android:title="@string/dashboard_columns_portrait_title"
-                settings:max="3"
+                android:max="3"
                 settings:min="1"
                 settings:units=""
                 android:persistent="false" />
@@ -37,7 +37,7 @@
         <com.viper.venom.preference.CustomSeekBarPreference
                 android:key="dashboard_landscape_columns"
                 android:title="@string/dashboard_columns_landscape_title"
-                settings:max="5"
+                android:max="5"
                 settings:min="1"
                 settings:units=""
                 android:persistent="false" />
