@@ -49,18 +49,21 @@
 
     <com.viper.venom.preference.SystemSettingSwitchPreference
         android:key="data_disabled_icon"
+        android:icon="@drawable/data_disabled_icon"
         android:title="@string/data_disabled_icon_title"
         android:summary="@string/data_disabled_icon_summary"
         android:defaultValue="true"/>
 
     <com.viper.venom.preference.SystemSettingSwitchPreference
         android:key="roaming_indicator_icon"
+        android:icon="@drawable/roaming_icon"
         android:title="@string/roaming_indicator_icon_title"
         android:summary="@string/roaming_indicator_icon_summary"
         android:defaultValue="true"/>
 
     <com.viper.venom.preference.SystemSettingSwitchPreference
         android:key="dnd_when_call"
+        android:icon="@drawable/dnd_icon"
         android:title="@string/dnd_when_call_title"
         android:summary="@string/dnd_when_call_summary"
         android:defaultValue="true" />
