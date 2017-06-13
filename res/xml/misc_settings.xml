@@ -20,6 +20,7 @@
             android:key="volume_steps"
             android:icon="@drawable/volume_steps"
             android:title="@string/volume_steps_title"
+            android:title="@string/volume_steps_summary"
             android:fragment="com.viper.venom.fragments.VolumeSteps" />
 
     </PreferenceCategory>
@@ -46,7 +47,7 @@
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
                 android:key="disable_settings_suggestions"
-                android:icon="@drawable/hide_panel"
+                android:icon="@drawable/suggestion_icon"
                 android:title="@string/dashboard_suggestions_title"
                 android:summaryOn="@string/summary_dashboard_suggestions_enabled"
                 android:summaryOff="@string/summary_dashboard_suggestions_disabled"
@@ -54,7 +55,7 @@
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
                 android:key="disable_dashboard_conditions"
-                android:icon="@drawable/hide_panel"
+                android:icon="@drawable/headsup_icon"
                 android:title="@string/dashboard_conditions_title"
                 android:summaryOn="@string/summary_dashboard_conditions_enabled"
                 android:summaryOff="@string/summary_dashboard_conditions_disabled"
@@ -62,7 +63,7 @@
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
                 android:key="remove_settings_tile_summary"
-                android:icon="@drawable/hide_panel"
+                android:icon="@drawable/toast_icon"
                 android:title="@string/remove_tile_summaries_title"
                 android:summaryOn="@string/remove_tile_summaries_summary_enabled"
                 android:summaryOff="@string/remove_tile_summaries_summary_disabled"
@@ -89,20 +90,23 @@
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
-            android:icon="@drawable/vibration"
+            android:icon="@drawable/call_connect_icon"
             android:title="@string/incall_vibrate_connect_title"
-            android:defaultValue="false" />
-
-        <com.viper.venom.preference.SystemSettingSwitchPreference
-            android:key="vibrate_on_callwaiting"
-            android:icon="@drawable/vibration"
-            android:title="@string/incall_vibrate_call_wait_title"
+            android:summary="@string/incall_vibrate_connect_summary"
             android:defaultValue="false" />
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
             android:key="vibrate_on_disconnect"
-            android:icon="@drawable/vibration"
+            android:icon="@drawable/call_disconnect_icon"
             android:title="@string/incall_vibrate_disconnect_title"
+            android:summary="@string/incall_vibrate_disconnect_summary"
+            android:defaultValue="false" />
+
+        <com.viper.venom.preference.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            android:icon="@drawable/call_wait_icon"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:summary="@string/incall_vibrate_call_wait_summary"
             android:defaultValue="false" />
 
     </PreferenceCategory>
@@ -127,6 +131,7 @@
 
         <com.viper.venom.preference.SystemSettingSwitchPreference
             android:key="battery_save_mode_color"
+            android:icon="@drawable/ic_battery_settings"
             android:title="@string/battery_saver_color_title"
             android:summary="@string/battery_saver_color_summary"
             android:defaultValue="true" />
