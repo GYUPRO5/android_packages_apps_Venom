@@ -221,8 +221,6 @@
     <string name="volume_keys_control_ring_stream_summary_on">Volume keys control ringtone volume</string>
     <string name="volume_keys_control_ring_stream_summary_off">Volume keys control media volume</string>
 
-    <string name="camera_double_tap_power_gesture_title">Press power button twice for camera</string>
-
     <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
     <string name="camera_double_tap_power_gesture_desc">Quickly open camera without unlocking your screen</string>
     <string name="torch_long_press_power_gesture_title">Flashlight in lock screen</string>
@@ -460,7 +458,8 @@
     <string name="lockscreen_misc_category">Miscellaneous</string>
 
     <!-- Other system settings category -->
-    <string name="misc_category">Other settings</string>
+    <string name="misc_category">Miscellaneous</string>
+    <string name="other_settings">Other settings</string>
 
     <!-- Other system settings category -->
     <string name="sound_category">Sound</string>
@@ -612,10 +611,6 @@
     <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
     <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without pin/password/pattern</string>
 
-    <!-- Double tap power button vibration -->
-    <string name="camera_dbl_tap_vib_title">Double tap power for camera vibration</string>
-    <string name="camera_dbl_tap_vib_summary">Vibrate on double tap of power button when enabled</string>
-
     <!-- Navbar double tap to sleep -->
     <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap on the navigation bar to put the device to sleep</string>
@@ -649,5 +644,8 @@
     <!-- Disable Battery Saver Warning Color -->
     <string name="battery_saver_color_title">Warning color</string>
     <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
+
+    <!-- Lockscreen visualizer -->
+    <string name="lockscreen_visualizer_summary">Show an effect on the lock screen when a music is playing</string>
 
 </resources>
